@@ -17,16 +17,9 @@ X_test_transformed = vector.transform(X_test)
 from sklearn.naive_bayes import MultinomialNB
 naivebayes = MultinomialNB()
 naivebayes.fit(X_transformed, y_train)
-from sklearn.metrics import classification_report
-print(classification_report(naivebayes.predict(X_test_transformed), y_test))
-
-
 import pickle
 saved_model = pickle.dumps(naivebayes)
 s = pickle.loads(saved_model)
-
-
-
 st.header('Sentiment Analyzer')
 input = st.text("Enter the word", value="")
 vec = vector.transform([input]).toarray()
