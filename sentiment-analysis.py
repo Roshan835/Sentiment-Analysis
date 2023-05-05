@@ -31,4 +31,4 @@ st.header('Sentiment Analyzer')
 input = st.text("Enter the word", value="")
 vec = vector.transform([input]).toarray()
 if st.button("Analyse"):
-    st.write(print(str(list(naivebayes.predict(vec))[0]).replace("0","NEGATIVE").replace("1","POSITIVE")))
+    st.write(str(list(s.predict(vec))[0]).replace("0","NEGATIVE").replace("1","POSITIVE"))
