@@ -19,7 +19,7 @@ import pickle
 saved_model = pickle.dumps(naivebayes)
 s = pickle.loads(saved_model)
 st.header('Sentiment Analyzer')
-input = st.text("Enter the word", value="")
+input = st.text_area("Enter the word", value="")
 vec = vector.transform([input]).toarray()
 if st.button("Analyse"):
-    st.write(str(list(s.predict(vec))[0]).replace("0","NEGATIVE").replace("1","POSITIVE"))
+    st.write(str(list(s.predict(vec))[0]).replace("0","NEGATIVE").replace("1","POSITIVE")))
